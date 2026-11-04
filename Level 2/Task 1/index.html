@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bulma Stylish Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+    }
+
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-content {
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-white has-text-centered mb-6">
+      Bulma Framework Card
+    </h1>
+
+    <div class="columns is-centered">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3yh40SNyfr5L8GZhc8P-pV80xgitALPp_Cg&s" alt="Card Image">
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <p class="title is-5">Modern Web UI</p>
+            <p class="content">
+              Build elegant and responsive components using the Bulma CSS framework.
+            </p>
+
+            <button class="button is-link is-fullwidth"
+              onclick="alert('Bulma card clicked!')">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

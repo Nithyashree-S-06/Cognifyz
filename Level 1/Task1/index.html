@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Task 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .section {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d3436;
+            font-size: 2.5rem;
+            margin-top: 0;
+        }
+
+        p {
+            color: #525f64;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .form-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input {
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #8ec5fc;
+        }
+
+        button {
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        footer {
+            margin-bottom: 40px;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div id="home" class="section">
+        <h1>Creative Developer</h1>
+        <img src="https://picsum.photos/id/180/600/350" alt="Workstation">
+        <p>Welcome to my internship project. This layout uses clean HTML5 and modern CSS3 techniques to create a smooth user experience.</p>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About This Project</h2>
+        <p>The navigation menu above uses internal anchors to move between sections. The background features a vibrant CSS gradient, and the form below includes functional logic.</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Get In Touch</h2>
+        <form class="form-container" id="internForm">
+            <input type="text" id="userName" placeholder="Enter your full name" required>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <footer>&copy; 2024 Web Dev Internship Task</footer>
+
+    <script>
+        document.getElementById('internForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value;
+            alert("Success! Thank you, " + name + ". Your message has been sent.");
+            window.location.reload();
+        });
+    </script>
+
+</body>
+</html>

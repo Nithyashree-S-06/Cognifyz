@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple JavaScript Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(63, 158, 158);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #000;
+            padding: 25px;
+            border-radius: 20px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .container:hover {
+            box-shadow: 0 12px 50px white ;
+            width: 335px;
+            height: 475px;
+            transition: 0.25s;
+
+
+
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: aqua;
+            color: rgb(5, 5, 5);
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 10px;
+            border: 1px solid #202020;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fffafa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Color Change Button</h2>
+    <button id="colorBtn">Click Me</button>
+
+    <h2>Greeting Alert</h2>
+    <button onclick="showGreeting()">Show Greeting</button>
+
+    <h2>Simple Calculator</h2>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+
+    <div class="result" id="result"></div>
+
+</div>
+
+<script>
+    // 1. Button color change
+    const colorBtn = document.getElementById("colorBtn");
+    let isGreen = true;
+
+    colorBtn.addEventListener("click", () => {
+        if (isGreen) {
+            colorBtn.style.backgroundColor = "#F5F5DC";
+        } else {
+            colorBtn.style.backgroundColor = "aqua";
+        }
+        isGreen = !isGreen;
+    });
+
+    // 2. Time-based greeting alert
+    function showGreeting() {
+        const hour = new Date().getHours();
+        let message;
+
+        if (hour < 12) {
+            message = "Good Morning!";
+        } else if (hour < 18) {
+            message = "Good Afternoon!";
+        } else {
+            message = "Good Evening!";
+        }
+
+        alert(message);
+    }
+
+    // 3. Calculator addition
+    function addNumbers() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.getElementById("result").innerText = "Please enter valid numbers";
+            return;
+        }
+
+        const sum = num1 + num2;
+        document.getElementById("result").innerText = "Result: " + sum;
+    }
+</script>
+
+</body>
+</html>
